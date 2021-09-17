@@ -28,6 +28,7 @@ public class HomeWork {
         for (int j = 0; j < oneWord.length(); j++) {
           if (temp2[k] == temp1[j]) {
             temp4[k] = temp2[k];
+            temp1[j] = 0;
             break;
           }
         }
