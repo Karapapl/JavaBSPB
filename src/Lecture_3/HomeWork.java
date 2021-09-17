@@ -3,8 +3,8 @@ package Lecture_3;
 public class HomeWork {
   public static void main(String[] args) {
 
-    String oneWord = "пЕнСи Онаер к А";
-    String twoWord = "п  окра  С невние";
+    String oneWord = "пЕнСи Онер к А";
+    String twoWord = "п  окра  С нение";
 
     oneWord = oneWord.toLowerCase().replace(" ", "");
     twoWord = twoWord.toLowerCase().replace(" ", "");
