@@ -12,7 +12,8 @@ public class HomeWork {
       char[] temp1 = oneWord.toCharArray();
       char[] temp2 = twoWord.toCharArray();
       char[] temp3 = new char[oneWord.length()];
-      char[] temp4 = new char[oneWord.length()];
+      char[] empty = new char[oneWord.length()];
+      String emptyWord = String.valueOf(empty);
 
       for (int k = 0; k < oneWord.length(); k++) {
         for (int j = 0; j < oneWord.length(); j++) {
@@ -23,21 +24,9 @@ public class HomeWork {
           }
         }
       }
-      temp2 = twoWord.toCharArray();
-      for (int k = 0; k < oneWord.length(); k++) {
-        for (int j = 0; j < oneWord.length(); j++) {
-          if (temp2[k] == temp1[j]) {
-            temp4[k] = temp2[k];
-            temp1[j] = 0;
-            break;
-          }
-        }
-      }
+      String threeWord = String.valueOf(temp2);
 
-      StringBuilder threeWord = new StringBuilder(String.valueOf(temp3));
-      StringBuilder foreWord = new StringBuilder(String.valueOf(temp4));
-
-      if (oneWord.equals(threeWord.toString()) && twoWord.equals(foreWord.toString())) {
+      if (threeWord.equals(emptyWord)) {
         System.out.println("Слова " + "\"" + oneWord + "\"" + " и \"" + twoWord + "\" являются анаграммой.");
       } else {
         System.out.println("Слова " + "\"" + oneWord + "\"" + " и \"" + twoWord + "\" не являются анаграммой.");
