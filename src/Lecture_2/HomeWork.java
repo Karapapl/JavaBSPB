@@ -1,5 +1,7 @@
 package Lecture_2;
 
+import java.util.Arrays;
+
 public class HomeWork {
   public static void main(String[] args) {
 
@@ -26,12 +28,9 @@ public class HomeWork {
       }
     }
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < person.length; i++) {
       if (person[i][1] == "M") {
-        for (int j = 0; j < 3; j++) {
-          System.out.print(" " + person[i][j] + " ");
-        }
-        System.out.println();
+        System.out.println(Arrays.toString(person[i]));
       }
     }
   }
