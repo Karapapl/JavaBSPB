@@ -31,7 +31,7 @@ public class Main {
     //Сортируем
     Arrays.sort(clientIndividual, Individual.SortYear);
 
-    //Вывод на
+    //Вывод
     for (int i = 0; i < clientIndividual.length; i++) {
       System.out.println(clientIndividual[i]);
 
