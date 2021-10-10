@@ -6,7 +6,7 @@ public class Main {
   public static void main(String[] args) {
 
   DataBase dataBase = new DataBase();
-  dataBase.createRandomClients(20);
+  dataBase.createRandomClients(100);
 
 
     //Определяем кол-во объектов с типом ФЛ
