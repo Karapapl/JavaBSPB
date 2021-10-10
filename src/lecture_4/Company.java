@@ -5,11 +5,27 @@ public class Company extends Base {
   int ogrn;
 
   public Company(int id, int inn, String title, int ogrn) {
-    super(id, inn);
+    this.id = id;
+    this.inn = inn;
     this.title = title;
     this.ogrn = ogrn;
   }
 
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public int getOgrn() {
+    return ogrn;
+  }
+
+  public void setOgrn(int ogrn) {
+    this.ogrn = ogrn;
+  }
 
   @Override
   public String toString() {
@@ -20,4 +36,5 @@ public class Company extends Base {
             ", ogrn=" + ogrn +
             '}';
   }
+
 }

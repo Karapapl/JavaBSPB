@@ -16,7 +16,8 @@ public class Individual extends Base {
   String sex;
 
   public Individual(int id, String fullName, int year, String sex, int inn) {
-    super(id, inn);
+    this.id = id;
+    this.inn = inn;
     this.fullName = fullName;
     this.year = year;
     this.sex = sex;
