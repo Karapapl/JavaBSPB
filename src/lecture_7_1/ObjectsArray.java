@@ -11,37 +11,37 @@ public class ObjectsArray<T> {
 
   public void add(Object str) {
     size++;
-    boolean approve = true;
-    boolean oldArray = true;
+    boolean approveUpArray = false;
+    boolean replacingDelValue = true;
     if (size > 1) {
       for (int i = 0; i < size - 1; i++) {
         if (array[i] == null) {
           array[i] = str;
-          oldArray = false;
+          replacingDelValue = false;
         } else {
 
           if (array[i].getClass() == str.getClass()) {
             if (array[i].equals(str)) {
-              approve = false;
+              approveUpArray = false;
               throw new ArrayStoreException("Значение " + str + " уже есть в данном массиве, его index равен " + i);
             } else {
-              approve = true;
+              approveUpArray = true;
             }
 
           } else {
-            approve = true;
+            approveUpArray = true;
           }
         }
       }
     }
 
-    if (approve) {
+    if (approveUpArray) {
       if (array.length < size) {
         Object[] newArray = new Object[array.length + 5];
         System.arraycopy(array, 0, newArray, 0, array.length);
         array = newArray;
       }
-      if (oldArray) {
+      if (replacingDelValue) {
         array[size - 1] = str;
       }
     }
