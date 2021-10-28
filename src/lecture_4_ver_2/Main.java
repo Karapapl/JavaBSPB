@@ -1,5 +1,6 @@
 package lecture_4_ver_2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
@@ -9,15 +10,19 @@ public class Main {
     IClientGenerator generatorUL = new ULClientGenerator();
 
 
-    Client[] clients = new Client[100];
-    for (int i = 0; i < clients.length; i++) {
+    ArrayList<Client> list = new ArrayList<>();
+    int size = 100;
+
+    for (int i = 0; i < size; i++) {
       if (i % 2 == 0) {
-        clients[i] = generatorUL.getRandomClient();
+        list.add(generatorUL.getRandomClient());
       } else {
-        clients[i] = generatorFL.getRandomClient();
+        list.add(generatorFL.getRandomClient());
       }
     }
 
+
+/*
     int x = 0;
     for (Client test : clients) {
       if (test instanceof FL) {
@@ -44,12 +49,18 @@ public class Main {
     for (int i = 0; i < clientFL.length; i++) {
       System.out.println(clientFL[i]);
     }
-/*
-    System.out.println("Общий список клиентов:");
-    for (int i = 0; i < clients.length ; i++) {
-      System.out.println(clients[i]);
-    }
 */
 
+
+
+    System.out.println("Общий список клиентов:");
+    for (int i = 0; i < size; i++) {
+      if ((list.get(i).getClass() == FL.class) && (list.get(i) )) {
+        System.out.println(list.get(i));
+      }
+    }
   }
+
+
 }
+
