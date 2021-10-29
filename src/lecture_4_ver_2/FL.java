@@ -2,14 +2,8 @@ package lecture_4_ver_2;
 
 import java.util.Comparator;
 
-public class FL extends Client {
+public class FL extends Client{
 
-  public static Comparator<FL> SortYear = new Comparator<FL>() {
-    @Override
-    public int compare(FL e1, FL e2) {
-      return e1.year - e2.year;
-    }
-  };
   protected String name;
   protected String sex;
   protected int year;
@@ -48,4 +42,16 @@ public class FL extends Client {
             ", ИНН= " + inn +
             '}';
   }
+
+  public static Comparator<FL> yearSort = new Comparator<FL>() {
+    @Override
+    public int compare(FL o1, FL o2) {
+      int FlYear1 = o1.year;
+      int FlYear2 = o2.year;
+      return FlYear1 - FlYear2;
+    }
+  };
+
+
+
 }

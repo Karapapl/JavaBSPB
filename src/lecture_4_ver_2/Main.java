@@ -1,27 +1,39 @@
 package lecture_4_ver_2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
 
-  public static void main(String[] args) {
-    IClientGenerator generatorFL = new FLClientGenerator();
-    IClientGenerator generatorUL = new ULClientGenerator();
+    public static void main(String[] args) {
+        IClientGenerator generatorFL = new FLClientGenerator();
+        IClientGenerator generatorUL = new ULClientGenerator();
 
 
-    ArrayList<Client> list = new ArrayList<>();
-    int size = 100;
+        ArrayList<Client> list = new ArrayList<>();
+        ArrayList<FL> listFL = new ArrayList<>();
+        int size = 100;
 
-    for (int i = 0; i < size; i++) {
-      if (i % 2 == 0) {
-        list.add(generatorUL.getRandomClient());
-      } else {
-        list.add(generatorFL.getRandomClient());
-      }
-    }
+        for (int i = 0; i < size; i++) {
+            if (i % 2 == 0) {
+                list.add(generatorUL.getRandomClient());
+            } else {
+                list.add(generatorFL.getRandomClient());
+            }
+        }
 
+        for (int i = 0; i < size; i++) {
+            if (list.get(i).getClass() == FL.class) {
+                listFL.add((FL) list.get(i));
+            }
+        }
 
+        Collections.sort(listFL, FL.yearSort);
+        System.out.println("Отсортированный список ФЛ:");
+        for (int i = 0; i < listFL.size(); i++) {
+            if (listFL.get(i).getSex().equals("Муж.")) {
+                System.out.println(listFL.get(i));
+            }
+        }
 /*
     int x = 0;
     for (Client test : clients) {
@@ -51,15 +63,7 @@ public class Main {
     }
 */
 
-
-
-    System.out.println("Общий список клиентов:");
-    for (int i = 0; i < size; i++) {
-      if ((list.get(i).getClass() == FL.class) && (list.get(i) )) {
-        System.out.println(list.get(i));
-      }
     }
-  }
 
 
 }

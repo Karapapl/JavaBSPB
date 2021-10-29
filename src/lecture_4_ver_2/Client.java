@@ -1,5 +1,7 @@
 package lecture_4_ver_2;
 
+import java.util.Comparator;
+
 public class Client {
 
   protected int id;
@@ -20,5 +22,7 @@ public class Client {
   public void setInn(int inn) {
     this.inn = inn;
   }
+
+
 }
 
